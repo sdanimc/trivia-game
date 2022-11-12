@@ -1,20 +1,24 @@
-
-h1{
+h1 {
     text-align: center;
     font-size: larger;
     padding: 15px;
 }
-h2{
+
+h2 {
     text-align: center;
     font-size: large;
+    padding: 6px;
 }
-h3{
+
+h3 {
     display: inline-block;
 }
-#scoreboard{
+
+#scoreboard {
     padding: 10px;
 }
-article{
+
+article {
     border: 1px solid black;
     line-height: 0;
     max-width: 800px;
@@ -22,11 +26,13 @@ article{
     overflow: auto;
 }
 
-textarea{
+textarea {
     border: none;
     max-height: 1.8rem;
+    text-align: center;
 }
-.savedscores{
+
+.savedscores {
     margin-left: 20px;
     padding: 8px;
     width: 90%;
@@ -34,6 +40,7 @@ textarea{
     max-height: 0%;
     white-space: pre-wrap;
 }
+
 .card {
     background-color: hsl(0, 0%, 100%);
     border-radius: 5px;
@@ -44,20 +51,26 @@ textarea{
     margin: 0 auto;
     max-width: 800px;
     padding: 30px 40px;
-  }
-  
+}
+
 .card-body {
     min-height: 100px;
-  }
-  .card-footer {
+}
+
+.card-footer {
     text-align: center;
-  }
+}
+
+#currentscore {
+    resize: none;
+    width: 100%;
+}
+
 .btn {
     border: none;
     background-color: hsl(360, 91%, 36%);
     border-radius: 25px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
-      0px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
     color: hsl(0, 0%, 100%);
     display: inline-block;
     font-size: 22px;
@@ -66,13 +79,16 @@ textarea{
     padding: 14px 34px;
     text-align: center;
     cursor: pointer;
-  }
-  .btn:hover{
+}
+
+.btn:hover {
     background-color: blue;
-  }
-  .answer{
+}
+
+.answer {
     display: none;
 }
+
 #question {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -92,21 +108,22 @@ textarea{
     border-radius: 6px;
     resize: none;
     overflow: hidden;
-  }
-  @media (max-width: 690px) {
+}
+
+@media (max-width: 690px) {
     .btn {
-      font-size: 1rem;
-      margin: 16px 0px 0px 0px;
-      padding: 10px 15px;
+        font-size: 1rem;
+        margin: 16px 0px 0px 0px;
+        padding: 10px 15px;
     }
-  
+
     #question {
-      font-size: 1rem;
+        font-size: 1rem;
     }
-  }
-  
-  @media (max-width: 500px) {
+}
+
+@media (max-width: 500px) {
     .btn {
-      font-size: 0.8rem;
+        font-size: 0.8rem;
     }
-  }
+}
