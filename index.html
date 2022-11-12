@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trivia Game</title>
+    <link rel="stylesheet" href="./assets/reset.css" />
+    <link rel="stylesheet" href="./assets/styles.css" />
+</head>
+
+<body>
+    <h1>Trivia Fun!</h1>
+    <h2 id="countdown"></h2>
+    <div class="card">
+        <div id="q-text-box">
+            <textarea readonly id="question" placeholder="Test Your Knowledge!"></textarea>
+        </div>
+        <div class="card-footer">
+            <button id="start" class="btn">Let's Play!</button>
+            <button id="true-btn" class="btn answer">True</button>
+            <button id="false-btn" class="btn answer">False</button>
+        </div>
+    </div>
+    <aside class="top-5" id="scores">
+        <h2 id="scoreboard">Top 5 Scores!</h2>
+        <article class="savedscoreboard">
+            <h3>#1</h3>
+            <textarea readonly id="" class="savedscores" placeholder="#1 Top Score! Your Name Here!"></textarea>
+        </article>
+        <article class="savedscoreboard">
+            <textarea readonly id="" class="savedscores" placeholder="#2 Top Score! Your Name Here!"></textarea>
+        </article>
+        <article class="savedscoreboard">
+            <textarea readonly id="" class="savedscores" placeholder="#3 Top 5 Scores! Your Name Here!"></textarea>
+        </article>
+        <article class="savedscoreboard">
+            <textarea readonly id="" class="savedscores" placeholder="#4 Top 5 Scores! Your Name Here!"></textarea>
+        </article>
+        <article class="savedscoreboard">
+            <textarea readonly id="" class="savedscores" placeholder="#5 Top 5 Scores! Your Name Here!"></textarea>
+        </article>
+    </aside>
+
+    <script src="./assets/script.js"></script>
+</body>
+
+</html>
