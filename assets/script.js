@@ -7,27 +7,61 @@ var startBtn = document.querySelector("#start");
 var trueBtn = document.getElementById("true-btn");
 var falseBtn = document.getElementById("false-btn");
 var timeLeft;
-var currentScoreText = document.querySelector("#currentscore");
-
 //has to be undefined but declared outside of function so other function can affect it
+var currentScoreText = document.querySelector("#currentscore");
 var currentQuestion = 0;
 
-function countdown() {
-    timeLeft = 20;
-    function saveYourScores() {
-        if (correct >= savedScore5) {
-            var playerName = window.prompt("Save score? Write Your Name Here!", "");
-            if (!playerName || playerName == "") { return saveYourScores; }
+
+/* v2 function saveYourScores(){
+    get then sort top5highscores? what am i finding with top 5? should that be the ID for ol that i need to change scoreboard to ??
+    var top5highscores = JSON.parse(window.localStorage.getItem("top5")) || []; <- local storage or empty array
+    var fifthScore = lowest top5 value
+    var playScore = correct;
+    if (playScore >= fifthScore) {
+        var playerName = window.prompt("Save score? Write Your Name Here!", "");
+        if (!playerName || playerName == "") { return null; }
+        else{ var newHighScore= {score: playScore, name:playerName};
+        top5highscores.push(newHighScore)
+        window.localStorage.setItem()
+    }
+}
+v1 function saveYourScores() {
+    var savedScore1Text = document.querySelector("#1stscore");
+    var firstScore = parseInt(document.querySelector("#1stscore"));
+    var savedScore2Text = document.querySelector("#2ndscore");
+    var secondScore = parseInt(document.querySelector("#2ndscore"));
+    var savedScore3Text = document.querySelector("#3rdscore");
+    var thirdScore = parseInt(document.querySelector("#3rdscore"));
+    var savedScore4Text = document.querySelector("#4thscore");
+    var fourthScore = parseInt(document.querySelector("#4thscore"));
+    var savedScore5Text = document.querySelector("#5thscore");
+    var fifthScore = parseInt(document.querySelector("#5thscore"));
+    if (correct >= fifthScore) {
+        var playerName = window.prompt("Save score? Write Your Name Here!", "");
+        if (!playerName || playerName == "") { return null; }
+        else {
+            var playScore = correct;
+            if (playScore > firstScore) {
+                savedScore1Text.value = playScore + " " + playerName + " Top Score!"
+            }
+            else if (playScore > secondScore) {
+                savedScore2Text.value = playScore + " " + playerName + " 2nd highest Top Score!"
+            }
+            else if (playScore > thirdScore) {
+                savedScore3Text.value = playScore + " " + playerName + " 3rd highest Top Score!"
+            }
+            else if (playScore > fourthScore) {
+                savedScore4Text.value = playScore + " " + playerName + " 4th highest Top Score!"
+            }
             else {
-                var playScore = correct;
-                var savedScore5 = document.querySelector("#5thscore");
-                savedScore5.value = playScore + " " + playerName + " 5th Top Score!"
-                //need to set up comparisions to saved scores, use parseInt
-                //why is this function in here? move out
+                savedScore5Text.value = playScore + " " + playerName + " 5th highest Top Score!"
             }
         }
-        else { return; };
-    };
+    }
+    else { return; };
+};*/
+function countdown() {
+    timeLeft = 20;
     var timeInterval = setInterval(function () {
         if (timeLeft >= 1) {
             timerVis.textContent = timeLeft + " tick..tick..tick..";
@@ -41,10 +75,10 @@ function countdown() {
             timerVis.textContent = " ";
             clearInterval(timeInterval);
             alert("Game Over! You got " + correct + " right and " + wrong + " wrong!");
-            saveYourScores();
             document.getElementById('start').style.display = "inline-block";
             document.getElementById('true-btn').style.display = "none";
             document.getElementById('false-btn').style.display = "none";
+            saveYourScores();
         }
     }, 1000);
 }
