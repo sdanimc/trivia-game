@@ -8,6 +8,7 @@ var timeLeft;
 //has to be undefined but declared outside of function so other function can affect it
 var currentScoreText = document.querySelector("#currentscore");
 var currentQuestion = 0;
+showSavedScores();
 
 function showSavedScores() {
     var highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
