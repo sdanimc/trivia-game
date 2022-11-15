@@ -9,8 +9,6 @@ var timeLeft;
 var currentScoreText = document.querySelector("#currentscore");
 var currentQuestion = 0;
 
-//showSavedScores();
-
 function showSavedScores() {
     var highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
     highscores.sort(function (a, b) {
@@ -29,7 +27,8 @@ function showSavedScores() {
     };
     for (var i = 0; i < highscores.length; i += 1) {
         var liItem = document.createElement("li");
-        liItem.textContent = highscores[i].score + " " + highscores[i].name + " Top Score!";
+        //liItem.textContent = highscores[i].score + " " + highscores[i].name + " Top Score!";
+        liItem.textContent = highscores[i].name + " had a Top Score of " + highscores[i].score + "!";
         olScores.appendChild(liItem);
     }
 };

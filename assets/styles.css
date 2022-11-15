@@ -7,23 +7,7 @@ h1 {
 h2 {
     text-align: center;
     font-size: large;
-    padding: 6px;
-}
-
-h3 {
-    display: inline-block;
-}
-
-#scoreboard {
-    padding: 10px;
-}
-
-article {
-    border: 1px solid black;
-    line-height: 0;
-    max-width: 800px;
-    margin: 0 auto;
-    overflow: auto;
+    padding: 15px;
 }
 
 textarea {
@@ -32,13 +16,28 @@ textarea {
     text-align: center;
 }
 
-.savedscores {
-    margin-left: 20px;
+ol {
+    line-height: 0;
+    margin: 0 auto;
+    overflow: auto;
+    text-align: center;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 5px;
+    border-width: 1px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
+    color: hsl(206, 17%, 28%);
+    font-size: 18px;
+    max-width: 800px;
+    padding: 30px 40px;
+}
+li {
+    line-height: 1.2rem;
     padding: 8px;
     width: 90%;
     resize: none;
     max-height: 0%;
     white-space: pre-wrap;
+    margin: auto;
 }
 
 .card {
@@ -57,7 +56,8 @@ textarea {
     min-height: 100px;
 }
 
-.card-footer {
+.card-footer,
+.scoreboard-footer {
     text-align: center;
 }
 
