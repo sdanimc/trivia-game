@@ -10,9 +10,11 @@
 </head>
 
 <body>
+    <!-- Top of Page -->
     <h1>Trivia Fun!</h1>
     <h2 id="countdown"></h2>
-    <div class="card">
+    <!--Game container-->
+    <div id="game" class="card">
         <div class="card-header">
             <textarea readonly id="currentscore"></textarea>
         </div>
@@ -25,9 +27,10 @@
             <button id="false-btn" class="btn answer">False</button>
         </div>
     </div>
+    <!--Scoreboard Section-->
     <aside class="top-5" id="scores">
         <h2 id="scoreboard">Top Scores!</h2>
-        <ol id="highscores"></ol>
+        <ol id="highscores" class="card"></ol>
         <div class="scoreboard-footer"><button id="clear" class="btn">Clear Highscores</button></div>
     </aside>
 

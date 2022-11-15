@@ -1,5 +1,9 @@
-body{background-color: rgb(148, 176, 245);
-color: rgb(4, 4, 109);}
+/*Full Page Selectors*/
+body {
+    background-color: rgb(148, 176, 245);
+    color: rgb(4, 4, 109);
+}
+
 h1 {
     text-align: center;
     font-size: 1.6rem;
@@ -12,35 +16,7 @@ h2 {
     padding: 15px;
 }
 
-textarea {
-    border: none;
-    max-height: 1.8rem;
-    text-align: center;
-}
-
-ol {
-    line-height: 0;
-    margin: 0 auto;
-    overflow: auto;
-    text-align: center;
-    background-color: hsl(0, 0%, 100%);
-    border-radius: 5px;
-    border-width: 1px;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 8px 0px;
-    font-size: 20px;
-    max-width: 800px;
-    padding: 30px 40px;
-}
-li {
-    line-height: 1.2rem;
-    padding: 8px;
-    width: 90%;
-    resize: none;
-    max-height: 0%;
-    white-space: pre-wrap;
-    margin: auto;
-}
-
+/*applied to both game and scoreboard*/
 .card {
     background-color: hsl(0, 0%, 100%);
     border-radius: 5px;
@@ -52,18 +28,9 @@ li {
     padding: 30px 40px;
 }
 
-.card-body {
-    min-height: 100px;
-}
-
 .card-footer,
 .scoreboard-footer {
     text-align: center;
-}
-
-#currentscore {
-    resize: none;
-    width: 100%;
 }
 
 .btn {
@@ -82,6 +49,23 @@ li {
 
 .btn:hover {
     background-color: rgb(0, 123, 255);
+}
+
+/*game area styles*/
+textarea {
+    border: none;
+    max-height: 1.8rem;
+    text-align: center;
+    color: rgb(4, 4, 109); ;
+}
+
+.card-body {
+    min-height: 100px;
+}
+
+#currentscore {
+    resize: none;
+    width: 100%;
 }
 
 .answer {
@@ -109,6 +93,26 @@ li {
     overflow: hidden;
 }
 
+/*scoreboard styles*/
+ol {
+    line-height: 0;
+    margin: 0 auto;
+    overflow: auto;
+    text-align: center;
+    font-size: 20px;
+}
+
+li {
+    line-height: 1.2rem;
+    padding: 8px;
+    width: 90%;
+    resize: none;
+    max-height: 0%;
+    white-space: pre-wrap;
+    margin: auto;
+}
+
+/*Page Scaling*/
 @media (max-width: 690px) {
     .btn {
         font-size: 1rem;

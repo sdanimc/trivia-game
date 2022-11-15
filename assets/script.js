@@ -1,3 +1,4 @@
+//global variables declared here
 var correct = 0;
 var wrong = 0;
 var timerVis = document.getElementById('countdown');
@@ -8,8 +9,23 @@ var timeLeft;
 //has to be undefined but declared outside of function so other function can affect it
 var currentScoreText = document.querySelector("#currentscore");
 var currentQuestion = 0;
+var questions = [
+    { question: "Kangaroos can swim", answer: true },
+    { question: "Male reindeer lose their antlers well before Christmas while female reindeer keeps their antlers through the holidays", answer: true },
+    { question: "Rhinos, Elephants and Hippos are genetic relatives known together as pachyderms", answer: false },
+    { question: "Antibacterial soap is super helpful to prevent disease and environmentally friendly", answer: false },
+    { question: "Moose are strong divers holding their breath for a full minute and reaching 6 meters deep", answer: true },
+    { question: "Polar bears don't eat penguins but they coexist instead in Antartica", answer: false },
+    { question: "New Zealand has no native mammals except for bats", answer: true },
+    { question: "Bats can swim", answer: true }
+];
+
+//show scores on page load
 showSavedScores();
 
+//page functions/logic
+
+//scoreboard functions
 function showSavedScores() {
     var highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
     highscores.sort(function (a, b) {
@@ -28,7 +44,6 @@ function showSavedScores() {
     };
     for (var i = 0; i < highscores.length; i += 1) {
         var liItem = document.createElement("li");
-        //liItem.textContent = highscores[i].score + " " + highscores[i].name + " Top Score!";
         liItem.textContent = highscores[i].name + " had a Top Score of " + highscores[i].score + "!";
         olScores.appendChild(liItem);
     }
@@ -43,10 +58,15 @@ function saveYourScores() {
         highscores.push(newHighScore);
         window.localStorage.setItem("highscores", JSON.stringify(highscores));
         showSavedScores();
-
     }
 };
 
+function clearHighscores() {
+    window.localStorage.removeItem('highscores');
+    window.location.reload();
+}
+
+//game functions
 function countdown() {
     timeLeft = 20;
     var timeInterval = setInterval(function () {
@@ -75,20 +95,10 @@ function countdown() {
             if (correct >= lowestSaved) {
                 saveYourScores();
             }
-
         }
     }, 1000);
 }
-var questions = [
-    { question: "Kangaroos can swim", answer: true },
-    { question: "Male reindeer lose their antlers well before Christmas while female reindeer keeps their antlers through the holidays", answer: true },
-    { question: "Rhinos, Elephants and Hippos are genetic relatives known together as pachyderms", answer: false },
-    { question: "Antibacterial soap is super helpful to prevent disease and environmentally friendly", answer: false },
-    { question: "Moose are strong divers holding their breath for a full minute and reaching 6 meters deep", answer: true },
-    { question: "Polar bears don't eat penguins but they coexist instead in Antartica", answer: false },
-    { question: "New Zealand has no native mammals except for bats", answer: true },
-    { question: "Bats can swim", answer: true }
-];
+
 var showQuestion = function () {
     var questionText = document.querySelector("#question");
     questionText.value = questions[currentQuestion].question;
@@ -108,16 +118,15 @@ function answerClick(event) {
         userInput = false;
     };
     if (userInput !== questions[currentQuestion].answer) {
-        //penalities
         timeLeft -= 10;
         wrong++;
-
     }
     else {
         correct++;
         currentScoreText.value = correct;
     };
     currentQuestion++;
+    //8 is questions array length
     if (currentQuestion === 8) {
         timeLeft -= timeLeft;
     } else {
@@ -131,15 +140,10 @@ var playGame = function () {
     currentQuestion = 0;
     showQuestion();
 }
-function clearHighscores() {
-    window.localStorage.removeItem('highscores');
-    window.location.reload();
-}
+
+// event listeners/function triggers
 
 document.getElementById('clear').onclick = clearHighscores;
-
-
-
 startBtn.addEventListener("click", playGame);
 startBtn.addEventListener("click", countdown);
 trueBtn.onclick = answerClick;
