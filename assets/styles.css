@@ -1,7 +1,9 @@
+body{background-color: rgb(148, 176, 245);
+color: rgb(4, 4, 109);}
 h1 {
     text-align: center;
-    font-size: larger;
-    padding: 15px;
+    font-size: 1.6rem;
+    padding: 18px;
 }
 
 h2 {
@@ -24,9 +26,8 @@ ol {
     background-color: hsl(0, 0%, 100%);
     border-radius: 5px;
     border-width: 1px;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
-    color: hsl(206, 17%, 28%);
-    font-size: 18px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 8px 0px;
+    font-size: 20px;
     max-width: 800px;
     padding: 30px 40px;
 }
@@ -44,8 +45,7 @@ li {
     background-color: hsl(0, 0%, 100%);
     border-radius: 5px;
     border-width: 1px;
-    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
-    color: hsl(206, 17%, 28%);
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 8px 0px;
     font-size: 18px;
     margin: 0 auto;
     max-width: 800px;
@@ -68,9 +68,8 @@ li {
 
 .btn {
     border: none;
-    background-color: hsl(360, 91%, 36%);
-    border-radius: 25px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
+    background-color: rgb(8, 30, 175);
+    border-radius: 20px;
     color: hsl(0, 0%, 100%);
     display: inline-block;
     font-size: 22px;
@@ -82,7 +81,7 @@ li {
 }
 
 .btn:hover {
-    background-color: blue;
+    background-color: rgb(0, 123, 255);
 }
 
 .answer {
@@ -100,7 +99,7 @@ li {
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 85px;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     text-align: center;
     margin-top: 10px;
     margin-bottom: 10px;
